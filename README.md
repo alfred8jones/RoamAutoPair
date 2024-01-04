@@ -6,7 +6,7 @@ Now you can disable the auto completed pairs of double brackets and parentheses!
 
 
 In action:
-![Example](https://raw.githubusercontent.com/alfred8jones/RoamAutoPair/main/example.gif)
+<img src="https://raw.githubusercontent.com/8bitgentleman/roam-depo-dark-toggle/main/example.gif" width="800"></img>
 
 
 
