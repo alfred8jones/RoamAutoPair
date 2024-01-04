@@ -12,4 +12,6 @@ In action:
 
 There's no more to it, no additional requirements needed, simply use the toggle switch and you're done!
 
+# Bugs & Feedback
+
 If you have any additional suggestions or comments - feel free to contanct me via email alfredjones511@gmail.com.
