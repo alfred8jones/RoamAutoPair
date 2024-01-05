@@ -1,16 +1,17 @@
+const pairs = new Array("[", "(", "{");
 var autoPairBrackets = true;
 
 const panelConfig = {
   tabTitle: "Auto Pair Toggle",
   settings: [{
-    id:      "auto-pair",
-    name:    "Auto Pair",
+    id: "auto-pair",
+    name: "Auto Pair",
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
-    action:    {
-      type:   "switch",
+    action: {
+      type: "switch",
       onChange: (evt) => {
-      autoPairBrackets = true;}}}
-      ]
+        autoPairBrackets = !autoPairBrackets;
+        }}}]
 };
 
 function onload({extensionAPI}) {
@@ -27,26 +28,25 @@ export default {
   onunload
 };
 
-const pairs = new Array("[", "(", "{", "z");
- document.addEventListener('input', function (e) {
 
-   if (!autoPairBrackets)
-   {return;}
-   
-   // Don't modify when text is deleted
-   if (e.inputType === "deleteContentBackward"|| e.inputType === "deleteContentForward" || e.inputType === "deleteContent")
-   {return;}
-
-    const pos = e.target.selectionStart;
-    const elementAsArr = [...e.target.value];
-
-   const inputFirstCh = e.target.value[pos-1];
-   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
-
-    if (isPair) {   
-      editedLine = elementAsArr.toSpliced(pos, 1).join('');
-      
-      e.target.value = editedLine;
-      e.target.selectionEnd = pos;
-    }
+document.addEventListener('input', function (e) {
+  if (!autoPairBrackets)
+  {return;}
+  
+  // Don't modify when text is deleted
+  if (e.inputType === "deleteContentBackward"|| e.inputType === "deleteContentForward" || e.inputType === "deleteContent")
+  {return;}
+  
+  const pos = e.target.selectionStart;
+  const elementAsArr = [...e.target.value];
+  
+  const inputFirstCh = e.target.value[pos-1];
+  const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
+  
+  if (isPair) {
+    editedLine = elementAsArr.toSpliced(pos, 1).join('');
+    
+    e.target.value = editedLine;
+    e.target.selectionEnd = pos;
+  }
 });
