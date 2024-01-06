@@ -44,7 +44,7 @@ document.addEventListener('input', function removePair(e) {
     // alert("e.target.value: " + e.target.value);
     // e.target.value = editedLine;
     // e.target.value = "b";
-    e.target.selectionEnd = pos;
+    // e.target.selectionEnd = pos;
   }
 });
 
