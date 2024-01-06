@@ -1,5 +1,5 @@
 const pairs = new Array("[", "(", "{");
-var autoPairBrackets = true;
+var autoPairToggle = true;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -10,7 +10,7 @@ const panelConfig = {
     action: {
       type: "switch",
       onChange: (evt) => {
-        autoPairBrackets = !autoPairBrackets;
+        autoPairToggle = !autoPairToggle;
       }}}]
 };
 
@@ -18,7 +18,7 @@ const panelConfig = {
 document.addEventListener('input', function removePair(e) {
   alert("toggle: " + autoPairBrackets);
   
-  if (!autoPairBrackets)
+  if (autoPairToggle == false)
   {return;}
   
   // Don't modify when text is deleted
@@ -39,13 +39,13 @@ document.addEventListener('input', function removePair(e) {
   alert("isPair: " + isPair);
   
   if (isPair == true) {
-    // editedLine = elementAsArr.toSpliced(pos, 1).join('');
+    editedLine = elementAsArr.toSpliced(pos, 1).join('');
 
     alert("element as arr: " + elementAsArr);
 
-    // alert("e.target.value: " + e.target.value);
+    alert("e.target.value: " + e.target.value);
     // e.target.value = editedLine;
-    // e.target.value = "b";
+    e.target.value = "b";
     e.target.selectionEnd = pos;
   }
 });
