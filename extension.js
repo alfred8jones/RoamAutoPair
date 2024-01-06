@@ -16,7 +16,7 @@ const panelConfig = {
 
 
 document.addEventListener('input', function removePair(e) {
-  alert("toggle: " + autoPairBrackets);
+  alert("toggle: " + autoPairToggle);
   
   if (autoPairToggle == false)
   {return;}
@@ -29,8 +29,6 @@ document.addEventListener('input', function removePair(e) {
   
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
-
-  
   
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
