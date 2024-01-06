@@ -24,8 +24,6 @@ document.addEventListener('input', function removePair(e) {
       || e.inputType === "deleteContentForward"
       || e.inputType === "deleteContent")
   {return;}
-
-  //alert("should work..");
   
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
@@ -35,14 +33,13 @@ document.addEventListener('input', function removePair(e) {
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
 
-  
+  alert("input char: " + inputFirstCh);
+  alert("type: " + e.inputType);
   
   if (isPair) {
     editedLine = elementAsArr.toSpliced(pos, 1).join('');
 
     alert("element as arr: " + elementAsArr);
-    
-    alert("input char: " + inputFirstCh);
 
     alert("e.target.value: " + e.target.value);
  //e.target.value = editedLine;
