@@ -64,5 +64,5 @@ function onunload(){
 
 export default {
   onload,
-  onunload,
+  onunload
 }; 
