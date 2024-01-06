@@ -34,7 +34,7 @@ document.addEventListener('input', function removePair(e) {
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
 
   alert("input char: " + inputFirstCh);
-  alert("type: " + e.inputType);
+  alert("isPair: " + isPair);
   
   if (isPair) {
     editedLine = elementAsArr.toSpliced(pos, 1).join('');
