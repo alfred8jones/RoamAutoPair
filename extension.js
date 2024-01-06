@@ -11,7 +11,6 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         autoPairBrackets = !autoPairBrackets;
-        alert(autoPairBrackets);
       }}}]
 };
 
@@ -26,22 +25,27 @@ document.addEventListener('input', function removePair(e) {
       || e.inputType === "deleteContent")
   {return;}
 
-  alert("should work..");
+  //alert("should work..");
   
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
 
-  alert("element as arr: " + elementAsArr);
+  
   
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
 
-  alert("input char: " + inputFirstCh + "isPair: " + isPair);
+  
   
   if (isPair) {
     editedLine = elementAsArr.toSpliced(pos, 1).join('');
+
+    alert("element as arr: " + elementAsArr);
     
-    //e.target.value = editedLine;
+    alert("input char: " + inputFirstCh);
+
+    alert("e.target.value: " + e.target.value);
+ //e.target.value = editedLine;
     e.target.value = "b";
     e.target.selectionEnd = pos;
   }
@@ -60,5 +64,5 @@ function onunload(){
 
 export default {
   onload,
-  onunload
+  onunload,
 }; 
