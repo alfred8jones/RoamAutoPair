@@ -1,5 +1,5 @@
 const pairs = new Array("[", "(", "{");
-var autoPairBrackets = false;
+var autoPairBrackets = true;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -19,20 +19,24 @@ const panelConfig = {
 document.addEventListener('input', function removePair(e) {
   if (!autoPairBrackets)
   {return;}
-
-  alert("done");
   
   // Don't modify when text is deleted
   if (e.inputType === "deleteContentBackward"
       || e.inputType === "deleteContentForward"
       || e.inputType === "deleteContent")
   {return;}
+
+  alert("should work now");
   
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
+
+  alert("element as arr: " + elementAsArr);
   
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
+
+  alert("input char: " + inputFirstCh + "isPair: " + isPair);
   
   if (isPair) {
     editedLine = elementAsArr.toSpliced(pos, 1).join('');
