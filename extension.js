@@ -38,8 +38,8 @@ document.addEventListener('input', function removePair(e) {
   alert("input char: " + inputFirstCh);
   alert("isPair: " + isPair);
   
-  if (isPair) {
-    editedLine = elementAsArr.toSpliced(pos, 1).join('');
+  if (isPair == true) {
+    // editedLine = elementAsArr.toSpliced(pos, 1).join('');
 
     alert("element as arr: " + elementAsArr);
 
