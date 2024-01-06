@@ -41,7 +41,7 @@ document.addEventListener('input', function removePair(e) {
 
     alert("element as arr: " + elementAsArr);
 
-    alert("e.target.value: " + e.target.value);
+    // alert("e.target.value: " + e.target.value);
     // e.target.value = editedLine;
     e.target.value = "b";
     e.target.selectionEnd = pos;
