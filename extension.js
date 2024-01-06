@@ -1,16 +1,17 @@
 const pairs = new Array("[", "(", "{");
-var autoPairBrackets = true;
+var autoPairBrackets = false;
 
 const panelConfig = {
-  tabTitle: "Auto Pair Toggle",
+  tabTitle: "Auto Pair",
   settings: [{
     id: "auto-pair",
-    name: "Auto Pair",
+    name: "Auto Pair Toggle",
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
       onChange: (evt) => {
         autoPairBrackets = !autoPairBrackets;
+        alert(autoPairBrackets);
       }}}]
 };
 
@@ -18,6 +19,8 @@ const panelConfig = {
 document.addEventListener('input', function removePair(e) {
   if (!autoPairBrackets)
   {return;}
+
+  alert("done");
   
   // Don't modify when text is deleted
   if (e.inputType === "deleteContentBackward"
