@@ -16,7 +16,7 @@ const panelConfig = {
 
 
 document.addEventListener('input', function removePair(e) {
-  alert(autoPairBrackets);
+  alert("toggle: " + autoPairBrackets);
   
   if (!autoPairBrackets)
   {return;}
@@ -43,9 +43,9 @@ document.addEventListener('input', function removePair(e) {
 
     alert("element as arr: " + elementAsArr);
 
-    //alert("e.target.value: " + e.target.value);
- //e.target.value = editedLine;
-    e.target.value = "b";
+    // alert("e.target.value: " + e.target.value);
+    // e.target.value = editedLine;
+    // e.target.value = "b";
     e.target.selectionEnd = pos;
   }
 });
