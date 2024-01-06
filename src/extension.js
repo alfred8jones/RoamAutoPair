@@ -11,16 +11,17 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         autoPairBrackets = !autoPairBrackets;
-        }}}]
+      }}}]
 };
 
 function onload({extensionAPI}) {
   console.log("loaded disable auto pair plugin");
-  extensionAPI.settings.panel.create(panelConfig);
+  extensionAPI.settings.panel.create(panelConfig)
 }
 
 function onunload(){
   console.log("unloaded disable auto pair plugin");
+  document.removeEventListener("input", removePair)
 }
 
 export default {
@@ -29,12 +30,15 @@ export default {
 };
 
 
-document.addEventListener('input', function (e) {
+document.addEventListener('input', function removePair(e) {
+  
   if (!autoPairBrackets)
   {return;}
   
   // Don't modify when text is deleted
-  if (e.inputType === "deleteContentBackward"|| e.inputType === "deleteContentForward" || e.inputType === "deleteContent")
+  if (e.inputType === "deleteContentBackward"
+      || e.inputType === "deleteContentForward"
+      || e.inputType === "deleteContent")
   {return;}
   
   const pos = e.target.selectionStart;
