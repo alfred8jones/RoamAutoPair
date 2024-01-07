@@ -31,7 +31,7 @@ function removePair(e) {
   var editedLine;
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
-  
+  alert("input!");
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
 
