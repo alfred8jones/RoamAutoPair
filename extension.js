@@ -13,16 +13,16 @@ const panelConfig = {
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
-      /*onLoad: (evt) => {
+      onLoad: (evt) => {
         // ev.target.checked = true;
         alert('yep');
-      }*/
-      onChange: (evt) => {
+      }
+      /*onChange: (evt) => {
         if (evt.target.checked)
             {autoPairToggled = true;}
         else
             {autoPairToggled = false;}
-      }}}]
+      }*/}}]
 };
 
 function removePair(e) {
@@ -58,7 +58,7 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
-  extensionAPI.settings.set(ids["autoPairToggle"], true);
+  // extensionAPI.settings.set(ids["autoPairToggle"], true);
   console.log("loaded disable auto pair plugin")
 }
 
