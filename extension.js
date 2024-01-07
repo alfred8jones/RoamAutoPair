@@ -56,8 +56,8 @@ function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
   myTest = extensionAPI.settings.panel.get("auto-pair");
   alert("myTest: " + myTest);
-  alert(".checked: " + myTest.checked);
-  alert("target.checked: " + myTest.target.checked);
+  // alert(".checked: " + myTest.checked);
+  // alert("target.checked: " + myTest.target.checked);
   // extensionAPI.settings.panel.set(myTest.checked, true);
   console.log("loaded disable auto pair plugin")
 }
