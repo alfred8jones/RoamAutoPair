@@ -1,5 +1,6 @@
 const pairs = new Array("[", "(", "{");
-var autoPairToggle = false;
+const DEFAULT_TOGGLE = false;
+var autoPairToggled = DEFAULT_TOGGLE;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -11,14 +12,14 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {autoPairToggle = true;}
+            {autoPairToggled = true;}
         else
-            {autoPairToggle = false;}
+            {autoPairToggled = false;}
       }}}]
 };
 
 function removePair(e) {
-  if (!autoPairToggle)
+  if (!autoPairToggled)
   {return;}
   
   // Don't modify when text is deleted
@@ -50,7 +51,7 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
-  extensionAPI.settings.set("auto-pair", false);
+  extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
   console.log("loaded disable auto pair plugin")
 }
 
