@@ -1,24 +1,28 @@
+var autoPairToggled = false; 
 const pairs = new Array("[", "(", "{");
-var autoPairToggle;
+const ids = new Map([
+  ["autoPairToggle", "auto-pair"]
+  ]);
 
-const panelConfig = {
+
+const panelConfig = () => {
   tabTitle: "Auto Pair",
   settings: [{
-    id: "auto-pair",
+    id: ids["autoPairToggle"],
     name: "Auto Pair Toggle",
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {autoPairToggle = true;}
+            {autoPairToggled = true;}
         else
-            {autoPairToggle = false;}
+            {autoPairToggled = false;}
       }}}]
 };
 
 function removePair(e) {
-  if (!autoPairToggle)
+  if (!autoPairToggled)
   {return;}
   
   // Don't modify when text is deleted
@@ -50,6 +54,7 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
+  extensionAPI.settings.set(ids["autoPairToggle"], false);
   console.log("loaded disable auto pair plugin")
 }
 
