@@ -1,5 +1,5 @@
 const pairs = new Array("[", "(", "{");
-var autoPairToggle = true;
+var autoPairToggle;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -10,15 +10,15 @@ const panelConfig = {
     action: {
       type: "switch",
       onChange: (evt) => {
-        autoPairToggle = !autoPairToggle;
+        if (evt.target.checked)
+            {autoPairToggle = true;}
+        else
+            {autoPairToggle = false;}
       }}}]
 };
 
-
-document.addEventListener('input', function removePair(e) {
-  alert("toggle: " + autoPairToggle);
-  
-  if (autoPairToggle == false)
+function removePair(e) {
+  if (!autoPairToggle)
   {return;}
   
   // Don't modify when text is deleted
@@ -27,36 +27,35 @@ document.addEventListener('input', function removePair(e) {
       || e.inputType === "deleteContent")
   {return;}
   
+  var editedLine;
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
   
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
 
-  alert("input char: " + inputFirstCh);
-  alert("isPair: " + isPair);
-  
-  if (isPair == true) {
-    editedLine = elementAsArr.toSpliced(pos, 1).join('');
-
-    alert("element as arr: " + elementAsArr);
-
-    // alert("e.target.value: " + e.target.value);
-    // e.target.value = editedLine;
-    // e.target.value = "b";
-    // e.target.selectionEnd = pos;
+  if (isPair) {
+    elementAsArr.splice(pos, 1);
+    editedLine = elementAsArr.join('');
+    
+    e.target.value = editedLine;
+    e.target.selectionEnd = pos;
   }
-});
+}
+
+
+// Main line..
+document.addEventListener('input', removePair);
 
 
 function onload({extensionAPI}) {
-  console.log("loaded disable auto pair plugin");
-  extensionAPI.settings.panel.create(panelConfig)
+  extensionAPI.settings.panel.create(panelConfig);
+  console.log("loaded disable auto pair plugin")
 }
 
-function onunload(){
-  console.log("unloaded disable auto pair plugin");
-  document.removeEventListener("input", removePair)
+function onunload() {
+  document.removeEventListener("input", removePair);
+  console.log("unloaded disable auto pair plugin")
 }
 
 export default {
