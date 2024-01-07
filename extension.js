@@ -54,8 +54,9 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
-  myTest = extensionAPI.settings.panel.get("auto-pair");
-  alert("myTest: " + myTest);
+  //myTest = extensionAPI.settings.panel.get("auto-pair");
+  //alert("myTest: " + myTest);
+  alert("loaded");
   // alert(".checked: " + myTest.checked);
   // alert("target.checked: " + myTest.target.checked);
   // extensionAPI.settings.panel.set(myTest.checked, true);
