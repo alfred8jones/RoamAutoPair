@@ -56,7 +56,8 @@ function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
   //myTest = extensionAPI.settings.panel.get("auto-pair");
   //alert("myTest: " + myTest);
-  alert("loaded: " + `${extensionAPI.settings.panel.get("auto-pair")}`);
+  alert("loaded: " + extensionAPI.settings.get("auto-pair"));
+  alert("loaded 2: " + extensionAPI.settings.get("auto-pair").checked);
   // alert(".checked: " + myTest.checked);
   // alert("target.checked: " + myTest.target.checked);
   // extensionAPI.settings.panel.set(myTest.checked, true);
