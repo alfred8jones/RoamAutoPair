@@ -60,7 +60,7 @@ function onload({extensionAPI}) {
   alert("loaded 2: " + extensionAPI.settings.get("auto-pair").checked);
   // alert(".checked: " + myTest.checked);
   // alert("target.checked: " + myTest.target.checked);
-  // extensionAPI.settings.panel.set(myTest.checked, true);
+  extensionAPI.settings.set("auto-pair", true);
   console.log("loaded disable auto pair plugin")
 }
 
