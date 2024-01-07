@@ -54,7 +54,7 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
-  extensionAPI.settings.set(ids["autoPairToggle"], false);
+  // extensionAPI.settings.set(ids["autoPairToggle"], false);
   console.log("loaded disable auto pair plugin")
 }
 
