@@ -1,5 +1,6 @@
 const pairs = new Array("[", "(", "{");
 var autoPairToggle;
+var test = 0;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -10,14 +11,17 @@ const panelConfig = {
     action: {
       type: "switch",
       onLoad: (evt) => {
-        alert('yep');
+        // alert('yep');
+        test = 1;
       }
-      /*onChange: (evt) => {
+      onChange: (evt) => {
         if (evt.target.checked)
-            {autoPairToggle = true;}
+            {
+        alert(test);
+        autoPairToggle = true;}
         else
             {autoPairToggle = false;}
-      }*/}}]
+      }}}]
 };
 
 function removePair(e) {
