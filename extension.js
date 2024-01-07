@@ -10,7 +10,7 @@ const panelConfig = {
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
-      onLoad: (evt) => {
+      onLoad: (ev) => {
         // alert('yep');
         test = 1;
       }
