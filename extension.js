@@ -13,7 +13,7 @@ const panelConfig = {
       onLoad: (ev) => {
         // alert('yep');
         test = 1;
-      }
+      };
       onChange: (evt) => {
         if (evt.target.checked)
             {
