@@ -9,12 +9,15 @@ const panelConfig = {
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
-      onChange: (evt) => {
+      onLoad: (evt) => {
+        alert('yep');
+      }
+      /*onChange: (evt) => {
         if (evt.target.checked)
             {autoPairToggle = true;}
         else
             {autoPairToggle = false;}
-      }}}]
+      }*/}}]
 };
 
 function removePair(e) {
