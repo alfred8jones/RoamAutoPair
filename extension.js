@@ -13,6 +13,9 @@ const panelConfig = {
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
+      onLoad: (ev) => {
+        ev.target.checked = true;
+      }
       onChange: (evt) => {
         if (evt.target.checked)
             {autoPairToggled = true;}
@@ -54,7 +57,7 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
-  extensionAPI.settings.set(ids["autoPairToggle"], false);
+  extensionAPI.settings.set(ids["autoPairToggle"], true);
   console.log("loaded disable auto pair plugin")
 }
 
