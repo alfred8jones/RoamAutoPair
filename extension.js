@@ -1,5 +1,5 @@
 const pairs = new Array("[", "(", "{");
-var autoPairToggle = true;
+var autoPairToggle = false;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
