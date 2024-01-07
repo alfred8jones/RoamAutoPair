@@ -1,7 +1,7 @@
 # Roam Disable Auto Pair
 
  
-Now you can disable the auto completed pairs of double brackets and parentheses!
+Now you can disable the auto completed pairs of brackets and parentheses!
 
 
 
