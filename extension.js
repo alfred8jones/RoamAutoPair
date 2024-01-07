@@ -1,5 +1,5 @@
 const pairs = new Array("[", "(", "{");
-var autoPairToggle;
+var autoPairToggle = true;
 var test = 0;
 
 const panelConfig = {
@@ -10,18 +10,18 @@ const panelConfig = {
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
-      onLoad: (ev) => {
+      onLoad: (evt) => {
         // alert('yep');
         test = 1;
-      };
-      onChange: (evt) => {
+      }
+      /*onChange: (evt) => {
         if (evt.target.checked)
             {
         alert(test);
         autoPairToggle = true;}
         else
             {autoPairToggle = false;}
-      }}}]
+      }*/}}]
 };
 
 function removePair(e) {
@@ -33,6 +33,8 @@ function removePair(e) {
       || e.inputType === "deleteContentForward"
       || e.inputType === "deleteContent")
   {return;}
+
+  alert(test);
   
   var editedLine;
   const pos = e.target.selectionStart;
