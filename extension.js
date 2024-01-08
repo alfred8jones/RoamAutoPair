@@ -1,5 +1,7 @@
-const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
+const LOAD_DONE = 1;
+const LOAD_UNDONE = 2;
+const pairs = new Array("[", "(", "{");
 var autoPairToggled = DEFAULT_TOGGLE;
 
 const panelConfig = {
@@ -50,37 +52,10 @@ document.addEventListener('input', removePair);
 
 
 function onload({extensionAPI}) {
-  /*if (window.onload)
-  {
-    const pageAccessedByReload = (
-  (window.performance.navigation && window.performance.navigation.type === 1) ||
-    window.performance
-      .getEntriesByType('navigation')
-      .map((nav) => nav.type)
-      .includes('naviage')
-);
-    alert("page navigated:" + pageAccessedByReload);
-    
-    if (!window.location.hash) {
-        window.location = window.location + '#loaded';
-        window.location.reload();
-      alert("hash");
-    }
-    alert("window loaded.");
-  }
-  if (document.onload)
-  {
-    alert("document loaded.");
-  }
-  if (window.open)
-  {
-    alert("window opened.");
-  }*/
-  
   // Check if this is the first load by seeing if our object exists in local storage
-    if (localStorage.getItem('firstLoadDone') === null || localStorage.getItem('firstLoadDone') === false) {
+    if (localStorage.getItem('firstLoadDone') === null || localStorage.getItem('firstLoadDone') === LOAD_UNDONE) {
       // If it's the first load, set the flag in local storage to true and reload the page
-      localStorage.setItem('firstLoadDone', true);
+      localStorage.setItem('firstLoadDone', LOAD_DONE);
       alert('This is the initial load');
     } else {
       alert('This is a page refresh');
@@ -93,7 +68,7 @@ function onload({extensionAPI}) {
 }
 
 function onunload() {
-  localStorage.setItem('firstLoadDone', false);
+  localStorage.setItem('firstLoadDone', LOAD_UNDONE);
   alert("unloaded!: " + localStorage.getItem('firstLoadDone'));
   
   document.removeEventListener("input", removePair);
