@@ -113,7 +113,7 @@ function onload({extensionAPI}) {
 }
 
 function onunload() {
-  // alert("
+  alert("unloaded!");
   localStorage.setItem('firstLoadDone', 0);
   
   document.removeEventListener("input", removePair);
