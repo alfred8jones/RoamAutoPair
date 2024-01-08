@@ -10,10 +10,14 @@ document.onload = function checkToggle() {
   alert("document loaded now");
 }
 
-window.whenloaded = function myFunv(fn) {
+window.whenloaded = function myFunv() {
   if (window.onload) {
     alert("check one.");
     }
+  else
+  {
+    alert("check two.");
+  }
 }
 
 const panelConfig = {
@@ -99,6 +103,8 @@ function onload({extensionAPI}) {
     } else {
       alert('This is a page refresh');
     }
+
+  myFunv();
   
   extensionAPI.settings.panel.create(panelConfig);
   extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
@@ -108,6 +114,8 @@ function onload({extensionAPI}) {
 
 function onunload() {
   // alert("
+  localStorage.setItem('firstLoadDone', null);
+  
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
 }
