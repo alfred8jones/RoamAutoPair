@@ -2,6 +2,10 @@ const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
 var autoPairToggled = DEFAULT_TOGGLE;
 
+window.onload = function() {
+  alert("window loaded");
+}
+
 const panelConfig = {
   tabTitle: "Auto Pair",
   settings: [{
