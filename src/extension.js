@@ -1,6 +1,5 @@
-const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
-var autoPairToggled = DEFAULT_TOGGLE;
+const pairs = new Array("[", "(", "{");
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -12,14 +11,14 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {autoPairToggled = true;}
+            {localStorage.setItem('autoPairToggled', "true");}
         else
-            {autoPairToggled = false;}
+            {localStorage.setItem('autoPairToggled', "false");}
       }}}]
 };
 
 function removePair(e) {
-  if (!autoPairToggled)
+  if (JSON.parse(localStorage.getItem('autoPairToggled')) == false)
   {return;}
   
   // Don't modify when text is deleted
@@ -31,7 +30,7 @@ function removePair(e) {
   var editedLine;
   const pos = e.target.selectionStart;
   const elementAsArr = [...e.target.value];
-  alert("input!");
+  
   const inputFirstCh = e.target.value[pos-1];
   const isPair = pairs.indexOf(inputFirstCh) == -1 ? false : true;
 
@@ -51,12 +50,20 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
-  extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
-  alert("loaded");
+
+  // Check for extension initial load using local storage
+  if (localStorage.getItem('firstLoadDone') == null || localStorage.getItem('firstLoadDone') == "unloaded")
+  {
+    extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE); // Toggle button on/off for first load
+    localStorage.setItem('autoPairToggled', DEFAULT_TOGGLE.toString());
+    localStorage.setItem('firstLoadDone', "loaded");
+  }
+  
   console.log("loaded 'disable auto pair' plugin.")
 }
 
 function onunload() {
+  localStorage.setItem('firstLoadDone', "unloaded");
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
 }
