@@ -63,7 +63,7 @@ function onload({extensionAPI}) {
   
   extensionAPI.settings.panel.create(panelConfig);
 
-  if (localStorage.getItem('firstLoadDone') === null || localStorage.getItem('firstLoadDone') === LOAD_UNDONE)
+  if (localStorage.getItem('firstLoadDone') == null || localStorage.getItem('firstLoadDone') == LOAD_UNDONE)
   {
     extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
   }
