@@ -52,30 +52,20 @@ document.addEventListener('input', removePair);
 
 
 function onload({extensionAPI}) {
-  // Check if this is the first load by seeing if our object exists in local storage
-    if (localStorage.getItem('firstLoadDone') == null || localStorage.getItem('firstLoadDone') == LOAD_UNDONE) {
-      // If it's the first load, set the flag in local storage to true and reload the page
-      localStorage.setItem('firstLoadDone', LOAD_DONE);
-      alert('This is the initial load');
-    } else {
-      alert('This is a page refresh');
-    }
-  
   extensionAPI.settings.panel.create(panelConfig);
 
+  // Check for extension initial load using local storage
   if (localStorage.getItem('firstLoadDone') == null || localStorage.getItem('firstLoadDone') == LOAD_UNDONE)
   {
     extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
+    localStorage.setItem('firstLoadDone', LOAD_DONE);
   }
   
-  alert("loaded");
   console.log("loaded 'disable auto pair' plugin.")
 }
 
 function onunload() {
   localStorage.setItem('firstLoadDone', LOAD_UNDONE);
-  alert("unloaded!: " + localStorage.getItem('firstLoadDone'));
-  
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
 }
