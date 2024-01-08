@@ -71,9 +71,9 @@ function onload({extensionAPI}) {
     window.performance
       .getEntriesByType('navigation')
       .map((nav) => nav.type)
-      .includes('prerender')
+      .includes('naviage')
 );
-    alert("page roaload:" + pageAccessedByReload);
+    alert("page navigated:" + pageAccessedByReload);
     
     if (!window.location.hash) {
         window.location = window.location + '#loaded';
