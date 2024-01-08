@@ -20,8 +20,9 @@ const panelConfig = {
 };
 
 function removePair(e) {
-  alert(localStorage.getItem('autoPairToggled'));
-  if (localStorage.getItem('autoPairToggled') == false)
+  // alert(localStorage.getItem('autoPairToggled'));
+  isToggled = localStorage.getItem('autoPairToggled');
+  if (!isToggled)
   {return;}
   
   // Don't modify when text is deleted
