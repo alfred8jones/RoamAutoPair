@@ -69,6 +69,7 @@ function onload({extensionAPI}) {
     if (!window.location.hash) {
         window.location = window.location + '#loaded';
         window.location.reload();
+      alert("hash");
     }
     alert("window loaded.");
   }
@@ -87,6 +88,7 @@ function onload({extensionAPI}) {
 }
 
 function onunload() {
+  // alert("
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
 }
