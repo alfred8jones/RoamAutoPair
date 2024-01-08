@@ -93,8 +93,8 @@ function onload({extensionAPI}) {
 }
 
 function onunload() {
-  alert("unloaded!");
   localStorage.setItem('firstLoadDone', 0);
+  alert("unloaded!: " + localStorage.getItem('firstLoadDone'));
   
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
