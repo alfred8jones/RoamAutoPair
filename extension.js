@@ -2,11 +2,11 @@ const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
 var autoPairToggled = DEFAULT_TOGGLE;
 
-window.onload = function() setToggle {
+window.onload = function setToggle() {
   alert("window loaded");
 }
 
-document.onload = function() checkToggle {
+document.onload = function checkToggle() {
   alert("document loaded");
 }
 
