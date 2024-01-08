@@ -2,8 +2,12 @@ const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
 var autoPairToggled = DEFAULT_TOGGLE;
 
-window.onload = function() {
+window.onload = function() setToggle {
   alert("window loaded");
+}
+
+document.onload = function() checkToggle {
+  alert("document loaded");
 }
 
 const panelConfig = {
