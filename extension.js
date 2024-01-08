@@ -2,7 +2,6 @@ const DEFAULT_TOGGLE = false;
 const LOAD_DONE = 1;
 const LOAD_UNDONE = 2;
 const pairs = new Array("[", "(", "{");
-var autoPairToggled;
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -14,15 +13,14 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {autoPairToggled = true;}
+            {localStorage.setItem('autoPairToggled', true);}
         else
-            {autoPairToggled = false;}
+            {localStorage.setItem('autoPairToggled', false);}
       }}}]
 };
 
 function removePair(e) {
-  alert(autoPairToggled);
-  if (!autoPairToggled)
+  if (!localStorage.getItem('autoPairToggled'))
   {return;}
   
   // Don't modify when text is deleted
@@ -59,7 +57,7 @@ function onload({extensionAPI}) {
   if (localStorage.getItem('firstLoadDone') == null || localStorage.getItem('firstLoadDone') == LOAD_UNDONE)
   {
     extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE); // Toggle button on/off for first load
-    autoPairToggled = DEFAULT_TOGGLE;
+    localStorage.setItem('autoPairToggled', DEFAULT_TOGGLE);
     localStorage.setItem('firstLoadDone', LOAD_DONE);
   }
   
