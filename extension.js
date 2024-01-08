@@ -16,11 +16,11 @@ function App() {
     }
   }, []);
 
-  /*return (
+  return (
     <div className="App">
       <h1>Welcome to my React app!</h1>
     </div>
-  );*/
+  );
 }
 
 //export default App;
