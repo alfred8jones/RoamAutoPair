@@ -66,6 +66,15 @@ document.addEventListener('input', removePair);
 function onload({extensionAPI}) {
   if (window.onload)
   {
+    const pageAccessedByReload = (
+  (window.performance.navigation && window.performance.navigation.type === 1) ||
+    window.performance
+      .getEntriesByType('navigation')
+      .map((nav) => nav.type)
+      .includes('reload')
+);
+    alert("page roaload:" + pageAccessedByReload);
+    
     if (!window.location.hash) {
         window.location = window.location + '#loaded';
         window.location.reload();
