@@ -78,9 +78,9 @@ function onload({extensionAPI}) {
   }*/
   
   // Check if this is the first load by seeing if our object exists in local storage
-    if (localStorage.getItem('firstLoadDone') === null || localStorage.getItem('firstLoadDone') == 2) {
+    if (localStorage.getItem('firstLoadDone') === null || localStorage.getItem('firstLoadDone') === false) {
       // If it's the first load, set the flag in local storage to true and reload the page
-      localStorage.setItem('firstLoadDone', 1);
+      localStorage.setItem('firstLoadDone', true);
       alert('This is the initial load');
     } else {
       alert('This is a page refresh');
@@ -93,7 +93,7 @@ function onload({extensionAPI}) {
 }
 
 function onunload() {
-  localStorage.setItem('firstLoadDone', 2);
+  localStorage.setItem('firstLoadDone', false);
   alert("unloaded!: " + localStorage.getItem('firstLoadDone'));
   
   document.removeEventListener("input", removePair);
