@@ -10,6 +10,12 @@ document.onload = function checkToggle() {
   alert("document loaded now");
 }
 
+window.whenloaded = function myFunv(fn) {
+  if (window.onload) {
+    alert("check one.");
+    }
+}
+
 const panelConfig = {
   tabTitle: "Auto Pair",
   settings: [{
@@ -66,7 +72,10 @@ function onload({extensionAPI}) {
   {
     alert("document loaded.");
   }
-  
+  if (window.open)
+  {
+    alert("window opened.");
+  }
   extensionAPI.settings.panel.create(panelConfig);
   extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
   alert("loaded");
