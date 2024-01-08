@@ -2,13 +2,13 @@ const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
 var autoPairToggled = DEFAULT_TOGGLE;
 
-/*window.onload = function setToggle() {
-  alert("window loaded");
+window.onload = function setToggle() {
+  alert("window loaded now");
 }
 
 document.onload = function checkToggle() {
-  alert("document loaded");
-}*/
+  alert("document loaded now");
+}
 
 const panelConfig = {
   tabTitle: "Auto Pair",
