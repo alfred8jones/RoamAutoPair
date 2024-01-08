@@ -1,6 +1,8 @@
 const DEFAULT_TOGGLE = false;
 const LOAD_DONE = 1;
 const LOAD_UNDONE = 2;
+const TOGGLE_ON = 1;
+const TOGGLE_OFF = 2;
 const pairs = new Array("[", "(", "{");
 
 const panelConfig = {
@@ -13,16 +15,16 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {localStorage.setItem('autoPairToggled', true);}
+            {localStorage.setItem('autoPairToggled', TOGGLE_ON);}
         else
-            {localStorage.setItem('autoPairToggled', false);}
+            {localStorage.setItem('autoPairToggled', TOGGLE_OFF);}
       }}}]
 };
 
 function removePair(e) {
   // alert(localStorage.getItem('autoPairToggled'));
-  isToggled = localStorage.getItem('autoPairToggled');
-  if (!isToggled)
+  // isToggled = localStorage.getItem('autoPairToggled');
+  if (localStorage.getItem('autoPairToggled') == TOGGLE_OFF)
   {return;}
   
   // Don't modify when text is deleted
