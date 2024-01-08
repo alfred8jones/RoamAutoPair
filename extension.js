@@ -2,13 +2,13 @@ const pairs = new Array("[", "(", "{");
 const DEFAULT_TOGGLE = false;
 var autoPairToggled = DEFAULT_TOGGLE;
 
-window.onload = function setToggle() {
+/*window.onload = function setToggle() {
   alert("window loaded");
 }
 
 document.onload = function checkToggle() {
   alert("document loaded");
-}
+}*/
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -58,6 +58,15 @@ document.addEventListener('input', removePair);
 
 
 function onload({extensionAPI}) {
+  if (window.onload)
+  {
+    alert("window loaded.");
+  }
+  if (document.onload)
+  {
+    alert("document loaded.");
+  }
+  
   extensionAPI.settings.panel.create(panelConfig);
   extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE);
   alert("loaded");
