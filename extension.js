@@ -66,6 +66,10 @@ document.addEventListener('input', removePair);
 function onload({extensionAPI}) {
   if (window.onload)
   {
+    if (!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
     alert("window loaded.");
   }
   if (document.onload)
