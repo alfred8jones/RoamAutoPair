@@ -96,7 +96,7 @@ function onload({extensionAPI}) {
   }*/
   
   // Check if this is the first load by seeing if our object exists in local storage
-    if (localStorage.getItem('firstLoadDone') === null) {
+    if (localStorage.getItem('firstLoadDone') === null || localStorage.getItem('firstLoadDone') === 0) {
       // If it's the first load, set the flag in local storage to true and reload the page
       localStorage.setItem('firstLoadDone', 1);
       alert('This is the initial load');
@@ -114,7 +114,7 @@ function onload({extensionAPI}) {
 
 function onunload() {
   // alert("
-  localStorage.setItem('firstLoadDone', null);
+  localStorage.setItem('firstLoadDone', 0);
   
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
