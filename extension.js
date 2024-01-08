@@ -23,7 +23,7 @@ function App() {
   );*/
 }
 
-export default App;
+//export default App;
   
 window.onload = function setToggle() {
   alert("window loaded now");
@@ -127,5 +127,6 @@ function onunload() {
 
 export default {
   onload,
-  onunload
+  onunload,
+  App
 };
