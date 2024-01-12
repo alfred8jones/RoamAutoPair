@@ -13,14 +13,14 @@ In action:
 There's no more to it, no additional requirements needed, simply use the toggle switch and you're done!
 
 
-### For kind people only
+# For kind people only
 
 If you want to support me, please use Ko-fi below.
 
 you have my word that the folowing way is the way I split the money you'll donate:
 
-90% for charity
-5% for Ko-fi
+90% for charity</br>
+5% for Ko-fi</br>
 5% for myself.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8T9H47)
