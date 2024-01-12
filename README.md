@@ -13,7 +13,7 @@ In action:
 There's no more to it, no additional requirements needed, simply use the toggle switch and you're done!
 
 
-## Kind People Only
+## Kind people only
 
 If you want to support me, please use Ko-fi below.
 
