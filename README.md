@@ -13,7 +13,7 @@ In action:
 There's no more to it, no additional requirements needed, simply use the toggle switch and you're done!
 
 
-# Kind People Only
+## Kind People Only
 
 If you want to support me, please use Ko-fi below.
 
@@ -28,6 +28,6 @@ If you want to support me, please use Ko-fi below.
 every donate is appreciated!
 
 
-# Bugs & Feedback
+## Bugs & Feedback
 
 If you have any additional suggestions or comments - feel free to contanct me via email alfredjones511@gmail.com. 
