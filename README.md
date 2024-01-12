@@ -17,11 +17,11 @@ There's no more to it, no additional requirements needed, simply use the toggle 
 
 If you want to support me, please use Ko-fi below.
 
-p.s. you have my word that the folowing way is the way I split the money you'll donate:
+<i>Disclaimer:</i> you have my word that the folowing way is the way I split the money you'll donate:
 
 <b>90% for charity</br>
 5% for Ko-fi</br>
-5% for myself.</b>
+5% for myself</b>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8T9H47)
 
