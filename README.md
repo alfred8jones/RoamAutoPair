@@ -25,7 +25,7 @@ If you want to support me, please use Ko-fi below.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8T9H47)
 
-every donate is appreciated!
+your donation is greatly appreciated!
 
 
 ## Bugs & Feedback
