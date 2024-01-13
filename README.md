@@ -4,7 +4,7 @@ Now you can disable the auto-completed pairs of brackets and parentheses!
 \
 <img src="https://raw.githubusercontent.com/alfred8jones/RoamAutoPair/main/example.gif" width="800"></img>
 \
-There's no more to it, _no additional requirements needed_, simply use the toggle switch and you're done!
+There's no more to it, _no need for additional requirements_, simply use the toggle switch and you're done!
 
 ---
 
