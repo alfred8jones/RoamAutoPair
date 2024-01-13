@@ -17,7 +17,7 @@ There's no more to it, no additional requirements needed, simply use the toggle 
 
 If you want to support me, please use Ko-fi below.
 
-<b><i>Note:</i></b> you have my word that the following way is the way I devide the money you'll donate:
+<b><i>Note:</i></b> you have my word that the following way is the way I divide the money you'll donate:
 
 <b>90% for charity</br>
 5% for Ko-fi</br>
