@@ -1,7 +1,7 @@
 # Roam Disable Auto Pair
 \
 Now you can disable the auto-completed pairs of brackets and parentheses!
-\
+  \
 **In action:**
 <img src="https://raw.githubusercontent.com/alfred8jones/RoamAutoPair/main/example.gif" width="800"></img>
 \
