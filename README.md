@@ -12,6 +12,7 @@ In action:
 
 There's no more to it, no additional requirements needed, simply use the toggle switch and you're done!
 
+---
 
 ## Kind People Only
 
