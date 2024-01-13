@@ -19,6 +19,7 @@ _**Note:**_ you have my word that the following way is the way I divide the mone
 **90% for charity\
 5% for Ko-fi\
 5% for myself**
+
 \
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8T9H47)
 
