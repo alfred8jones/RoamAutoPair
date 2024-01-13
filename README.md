@@ -15,7 +15,7 @@ There's no more to it, no additional requirements needed, simply use the toggle 
 
 ## Kind People Only
 
-If you want to support me, please go ahead and use Ko-fi below.
+If you want to support me, go ahead and use this red button below.
 
 <b><i>Note:</i></b> you have my word that the following way is the way I divide the money you'll donate:
 
