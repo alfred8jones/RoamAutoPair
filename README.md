@@ -1,5 +1,5 @@
 # Roam Disable Auto Pair
-Now you can turn off the auto-closing of brackets & parentheses!
+Now you can turn off the auto-closing of brackets & parentheses in roam!
 
 \
 <img src="https://raw.githubusercontent.com/alfred8jones/RoamAutoPair/main/example.gif" width="800"></img>
