@@ -50,10 +50,11 @@ function removePair(e) {
     editedLine = elementAsArr.join('');
     
     //e.target.value = "a"; // necessary to prevent a small bug
-    e.currentTarget.value = editedLine;
-    e.currentTarget.selectionEnd = pos;
-    alert(e.currentTarget.value);
+    e.target.text = editedLine;
+    e.target.selectionEnd = pos;
+    alert(e.target.text);
     alert(e.target.value);
+    alert(e.target.data);
     //e.target.selectionEnd = pos - 1; 
     //alert(e.target.value);
     //e.target.selectionEnd = pos - 2;
