@@ -26,9 +26,9 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {// writeToStorage('autoPairToggled', "true");}
+            {writeToStorage('autoPairToggled', "true");}
         else
-            {// writeToStorage('autoPairToggled', "false");}
+            {writeToStorage('autoPairToggled', "false");}
       }}}]
 };
 
