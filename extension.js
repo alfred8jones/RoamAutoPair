@@ -52,7 +52,7 @@ function removePair(e) {
     //e.target.value = "a"; // necessary to prevent a small bug
     //e.setAttribute('target.value', "ab"); // = "ab";
     //e.target.value = "ab";
-    e.target.setAttribute('data-value', "ab");
+    e.target.data-value = "ab";
     //e.target.value = e.target.value + "a"; // necessary to prevent a small bug
     // e.target.value.slice(0, -1);
     // e.target.value = e.target.value.toString().slice(0, -1);
@@ -60,6 +60,7 @@ function removePair(e) {
     e.target.selectionEnd = pos;
     //alert(e.target.text);
     alert(e.target.value);
+    alert(e.target.getAttribute('data-value'));
     //e.target.value = "cd";
     //alert(e.srcElement.value);
     //alert(e.target.data);
