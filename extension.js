@@ -70,7 +70,7 @@ function removePair(e) {
     
     alert(e.target.value);
     alert(e.target.innerHTML);
-    alert(e.target.innerText);
+    alert(e.target.attributes);
     // alert(e.target.getAttribute('innerText').toString());
     //e.target.value = "cd";
     //alert(e.srcElement.value);
@@ -78,7 +78,7 @@ function removePair(e) {
     //e.target.selectionEnd = pos - 1; 
     //alert(e.target.value);
     //e.target.selectionEnd = pos - 2;
-    //alert(e.target.value);
+    //alert(e.target.attributes);
   }
 }
 
