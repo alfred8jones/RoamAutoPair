@@ -7,13 +7,6 @@ function writeToStorage(key, value) {
   const serializedData = localStorage.getItem(NAMESPACE);
   const data = serializedData ? JSON.parse(serializedData) : {};
   data[key] = value;
-  
-  // alert("data: " + JSON.stringify(data));
-  alert("key: " + key);
-  alert("value: " + value);
-  alert("get: " + API.settings.get("auto-pair"));
-  alert("to str: " + API.settings.get("auto-pair").toString());
-  
   localStorage.setItem(NAMESPACE, JSON.stringify(data));
 }
  
@@ -32,28 +25,12 @@ const panelConfig = {
     description: "Disables the automatically-created pairs for: square brackets, curly brackets and parentheses",
     action: {
       type: "switch",
-      onChange: (evt) => {
-        if (evt.target.checked)
-            {writeToStorage('autoPairToggled', "true");}
-        else
-            {writeToStorage('autoPairToggled', "false");}
-      }}}]
+      }}]
 };
 
 function removePair(e) {
-  if (API.settings.get("auto-pair") == true)
-  {
-    alert("toggle: true");
-  }
-  else
-  {
-    alert("ok: " + API.settings.get("auto-pair"));
-    alert("to str:" + API.settings.get("auto-pair").toString());
-  }
-  /*if (API.settings.get("auto-pair") == false)
-  {
-    alert("toggle: false");
-    return;}*/
+  if (API.settings.get("auto-pair") == false)
+  {return;}
   
   // Don't modify when text is deleted
   if (e.inputType === "deleteContentBackward"
@@ -84,21 +61,20 @@ document.addEventListener('input', removePair);
 
 function onload({extensionAPI}) {
   API = extensionAPI;
-  extensionAPI.settings.panel.create(panelConfig);
+  API.settings.panel.create(panelConfig);
 
   // Check for extension initial load using local storage
-  if (readFromStorage('firstLoadDone') == null || readFromStorage('firstLoadDone') == "unloaded")
+  if (readFromStorage('loadState') == null || readFromStorage('loadState') == "unloaded")
   {
-    extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE); // Toggle button on/off for first load
-    // writeToStorage('autoPairToggled', DEFAULT_TOGGLE.toString());
-    writeToStoarge('firstLoadDone', "loaded");
+    API.settings.set("auto-pair", DEFAULT_TOGGLE); // Toggle button on/off for first load
+    writeToStoarge('loadState', "loaded");
   }
   
   console.log("loaded 'disable auto pair' plugin.")
 }
 
 function onunload() {
-  writeToStorage('firstLoadDone', "unloaded");
+  writeToStorage('loadState', "unloaded");
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
 }
