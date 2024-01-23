@@ -49,7 +49,7 @@ function removePair(e) {
     elementAsArr.splice(pos, 1);
     editedLine = elementAsArr.join('');
     
-    e.target.value = editedLine + 'a'; // necessary to prevent a small bug
+    e.target.value = "a"; // necessary to prevent a small bug
     e.target.value = editedLine;
     e.target.selectionEnd = pos;
   }
