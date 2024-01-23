@@ -1,5 +1,6 @@
 let API;
 let TARGET;
+let TEXTT = "bb";
 const NAMESPACE = "AUTO-PAIR-EXT"; 
 const DEFAULT_TOGGLE = false; 
 const pairs = new Array("[", "(", "{");
@@ -67,8 +68,8 @@ function removePair(e) {
     var tar = e.target || e.srcElement;
 
     TARGET = e.target.value;
-    TARGET = "bb";
-    tar['value'] = "a";
+    TARGET = TEXTT;
+    //tar['value'] = "a";
     //tar['innerHTML'] = "b";
     //tar['textContent'] = "c";
 
