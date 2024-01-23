@@ -50,8 +50,8 @@ function removePair(e) {
     editedLine = elementAsArr.join('');
     
     //e.target.value = "a"; // necessary to prevent a small bug
-    e.setAttribute('target.value', "ab"); // = "ab";
-    
+    //e.setAttribute('target.value', "ab"); // = "ab";
+    e.target.value = "ab";
     //e.target.value = e.target.value + "a"; // necessary to prevent a small bug
     // e.target.value.slice(0, -1);
     // e.target.value = e.target.value.toString().slice(0, -1);
@@ -59,7 +59,8 @@ function removePair(e) {
     e.target.selectionEnd = pos;
     //alert(e.target.text);
     alert(e.target.value);
-    alert(e.srcElement.value);
+    e.target.value = "cd";
+    //alert(e.srcElement.value);
     //alert(e.target.data);
     //e.target.selectionEnd = pos - 1; 
     //alert(e.target.value);
