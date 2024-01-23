@@ -75,6 +75,7 @@ function removePair(e) {
     
     alert(e.target.value);
     alert(e.target.innerHTML);
+    alert(e.target.textContent);
 
     alert(e.target.getAttributeNames());
 
