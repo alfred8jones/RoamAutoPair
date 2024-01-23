@@ -72,6 +72,10 @@ function removePair(e) {
     alert(e.target.innerHTML);
     alert(e.target.attributes);
     alert(e.target.nodeValue);
+
+    e.target.attributes.each(function(index, attribute) {
+  alert("Attribute:"+attribute.nodeName+" | Value:"+attribute.nodeValue);
+});
     //
     // alert(e.target.getAttribute('innerText').toString());
     //e.target.value = "cd";
