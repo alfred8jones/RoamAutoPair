@@ -68,6 +68,8 @@ function removePair(e) {
     tar['value'] = "a";
     tar['innerHTML'] = "b";
     tar['textContent'] = "c";
+
+    tar.textContent += "a";
     
     const attrs = e.target.getAttributeNames().reduce((acc, name) => {
       
