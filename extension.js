@@ -6,9 +6,13 @@ function writeToStorage(key, value) {
   const serializedData = localStorage.getItem(NAMESPACE);
   const data = serializedData ? JSON.parse(serializedData) : {};
   data[key] = value;
-  alert("data: " + data);
-  alert("key: " + key);
-  alert("value: " + value);
+  
+  alert("data: " + JSON.stringify(data));
+  alert("key:", key);
+  alert("value:", value);
+  alert("get:", extensionAPI.settings.get("auto-pair"));
+  alert("to str:", extensionAPI.settings.get("auto-pair").toString());
+  
   localStorage.setItem(NAMESPACE, JSON.stringify(data));
 }
  
