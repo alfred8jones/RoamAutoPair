@@ -77,7 +77,12 @@ function removePair(e) {
     alert(e.target.innerHTML);
     alert(e.target.textContent);
 
-    alert(e.target.getAttributeNames());
+    var attris = e.target.getAttributeNames();
+    
+    for (var d in attris) {
+      alert(d + ", " + atrris[d]);
+      }
+    //alert(e.target.getAttributeNames());
 
     
 
