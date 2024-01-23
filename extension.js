@@ -67,11 +67,20 @@ function removePair(e) {
 
     tar['value'] = "abc";
     tar['innerHTML'] = "abc";
+    const attrs = element.getAttributeNames().reduce((acc, name) => {
+  return {...acc, [name]: element.getAttribute(name)};
+}, {}); 
     
     alert(e.target.value);
     alert(e.target.innerHTML);
-    alert(e.target.attributes);
-    alert(e.target.nodeValue);
+
+    alert(attrs);
+
+    
+
+    
+    //alert(e.target.attributes);
+    //alert(e.target.nodeValue);
 
     e.target.attributes.each(function(index, attribute) {
   alert("Attribute:"+attribute.nodeName+" | Value:"+attribute.nodeValue);
