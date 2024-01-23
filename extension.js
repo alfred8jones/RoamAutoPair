@@ -87,13 +87,14 @@ function removePair(e) {
     alert(e.target.value);
     alert(e.target.innerHTML);
     alert(e.target.textContent);
-    alert(e.target.defaultValue);
+    //alert(e.target.defaultValue);
 
     //var attris = e.target.getAttributeNames();
 
-    for (let attr of e.target.attributes) {
+    for (let attr of e.target.dataset) {
   //const value = e.target.getAttribute(name);
       //alert(attr.name + ", " + attr.value);
+      alert(attr);
     }
     //alert(e.target.getAttributeNames());
 
