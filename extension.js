@@ -26,15 +26,21 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {writeToStorage('autoPairToggled', "true");}
+            {// writeToStorage('autoPairToggled', "true");}
         else
-            {writeToStorage('autoPairToggled', "false");}
+            {// writeToStorage('autoPairToggled', "false");}
       }}}]
 };
 
 function removePair(e) {
-  if (JSON.parse(readFromStorage('autoPairToggled')) == false)
-  {return;}
+  if (extensionAPI.settings.get("auto-pair"))
+  {
+    alert("toggle: true");
+  }
+  if (extensionAPI.settings.get("auto-pair") == false)
+  {
+    alert("toggle: false");
+    return;}
   
   // Don't modify when text is deleted
   if (e.inputType === "deleteContentBackward"
@@ -70,7 +76,7 @@ function onload({extensionAPI}) {
   if (readFromStorage('firstLoadDone') == null || readFromStorage('firstLoadDone') == "unloaded")
   {
     extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE); // Toggle button on/off for first load
-    writeToStorage('autoPairToggled', DEFAULT_TOGGLE.toString());
+    // writeToStorage('autoPairToggled', DEFAULT_TOGGLE.toString());
     writeToStoarge('firstLoadDone', "loaded");
   }
   
