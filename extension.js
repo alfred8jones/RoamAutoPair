@@ -2,7 +2,7 @@ const NAMESPACE = "AUTO-PAIR-EXT";
 const DEFAULT_TOGGLE = false;
 const pairs = new Array("[", "(", "{");
 
-function writeToStorage(key, value, {extensionAPI}) {
+function writeToStorage(key, value) {
   const serializedData = localStorage.getItem(NAMESPACE);
   const data = serializedData ? JSON.parse(serializedData) : {};
   data[key] = value;
@@ -39,7 +39,7 @@ const panelConfig = {
       }}}]
 };
 
-function removePair(e, {extensionAPI}) {
+function removePair(e) {
   if (extensionAPI.settings.get("auto-pair") == true)
   {
     alert("toggle: true");
