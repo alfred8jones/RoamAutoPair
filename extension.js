@@ -51,7 +51,7 @@ function removePair(e) {
     
     //e.target.value = "a"; // necessary to prevent a small bug
     //e.setAttribute('target.value', "ab"); // = "ab";
-    e.target.innerHTML = "<p>Hi</p>";
+    //e.target.innerHTML = "<p>Hi</p>";
     //e.target.innerText = "ab";
     //e.target.value = e.target.value + "a"; // necessary to prevent a small bug
     // e.target.value.slice(0, -1);
@@ -59,9 +59,10 @@ function removePair(e) {
     //e.target.value = e.target.value - "a"; // necessary to prevent a small bug
     e.target.selectionEnd = pos;
     //alert(e.target.text);
+    var tar = e.target || e.srcElement;
     alert(e.target.value);
-    alert(e.target.getAttribute('innerHTML').toString());
-    alert(e.target.getAttribute('innerText').toString());
+    alert(tar.innerHTML);
+    // alert(e.target.getAttribute('innerText').toString());
     //e.target.value = "cd";
     //alert(e.srcElement.value);
     //alert(e.target.data);
