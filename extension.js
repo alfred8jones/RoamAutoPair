@@ -33,14 +33,19 @@ const panelConfig = {
 };
 
 function removePair(e) {
-  if (extensionAPI.settings.get("auto-pair"))
+  if (extensionAPI.settings.get("auto-pair") == true)
   {
     alert("toggle: true");
   }
-  if (extensionAPI.settings.get("auto-pair") == false)
+  else
+  {
+    alert("ok: " + extensionAPI.settings.get("auto-pair"));
+    alert("to str:" + extensionAPI.settings.get("auto-pair").toString());
+  }
+  /*if (extensionAPI.settings.get("auto-pair") == false)
   {
     alert("toggle: false");
-    return;}
+    return;}*/
   
   // Don't modify when text is deleted
   if (e.inputType === "deleteContentBackward"
