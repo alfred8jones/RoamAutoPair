@@ -1,8 +1,7 @@
+let API;
 const NAMESPACE = "AUTO-PAIR-EXT"; 
-const DEFAULT_TOGGLE = false;
+const DEFAULT_TOGGLE = false; 
 const pairs = new Array("[", "(", "{");
-
-const API = {extensionAPI};
 
 function writeToStorage(key, value) {
   const serializedData = localStorage.getItem(NAMESPACE);
@@ -42,16 +41,16 @@ const panelConfig = {
 };
 
 function removePair(e) {
-  if (extensionAPI.settings.get("auto-pair") == true)
+  if (API.settings.get("auto-pair") == true)
   {
     alert("toggle: true");
   }
   else
   {
-    alert("ok: " + extensionAPI.settings.get("auto-pair"));
-    alert("to str:" + extensionAPI.settings.get("auto-pair").toString());
+    alert("ok: " + API.settings.get("auto-pair"));
+    alert("to str:" + API.settings.get("auto-pair").toString());
   }
-  /*if (extensionAPI.settings.get("auto-pair") == false)
+  /*if (API.settings.get("auto-pair") == false)
   {
     alert("toggle: false");
     return;}*/
@@ -84,6 +83,7 @@ document.addEventListener('input', removePair);
 
 
 function onload({extensionAPI}) {
+  API = extensionAPI;
   extensionAPI.settings.panel.create(panelConfig);
 
   // Check for extension initial load using local storage
