@@ -79,9 +79,9 @@ function removePair(e) {
 
     //var attris = e.target.getAttributeNames();
 
-    for (const name of e.target.getAttributeNames()) {
-  const value = e.target.getAttribute(name);
-  alert(name + ", " + value);
+    for (let attr of e.target.attributes) {
+  //const value = e.target.getAttribute(name);
+      alert(attr.name + ", " + attr.value);
     }
     //alert(e.target.getAttributeNames());
 
@@ -90,10 +90,6 @@ function removePair(e) {
     
     //alert(e.target.attributes);
     //alert(e.target.nodeValue);
-
-    e.target.attributes.each(function(index, attribute) {
-  alert("Attribute:"+attribute.nodeName+" | Value:"+attribute.nodeValue);
-});
     //
     // alert(e.target.getAttribute('innerText').toString());
     //e.target.value = "cd";
