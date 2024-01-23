@@ -60,8 +60,8 @@ function removePair(e) {
     e.target.selectionEnd = pos;
     //alert(e.target.text);
     alert(e.target.value);
-    alert(e.getAttribute('innerHTML').toString());
-    alert(e.getAttribute('innerText').toString());
+    alert(e.target.getAttribute('innerHTML').toString());
+    alert(e.target.getAttribute('innerText').toString());
     //e.target.value = "cd";
     //alert(e.srcElement.value);
     //alert(e.target.data);
