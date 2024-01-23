@@ -71,6 +71,7 @@ function removePair(e) {
     alert(e.target.value);
     alert(e.target.innerHTML);
     alert(e.target.attributes);
+    alert(e.target.nodeValue);
     // alert(e.target.getAttribute('innerText').toString());
     //e.target.value = "cd";
     //alert(e.srcElement.value);
