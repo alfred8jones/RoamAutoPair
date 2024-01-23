@@ -69,13 +69,14 @@ function removePair(e) {
     tar['innerHTML'] = "abc";
     
     const attrs = e.target.getAttributeNames().reduce((acc, name) => {
+      
   return {...acc, [name]: e.target.getAttribute(name)};
 }, {}); 
     
     alert(e.target.value);
     alert(e.target.innerHTML);
 
-    alert(attrs);
+    alert(e.target.getAttributeNames());
 
     
 
