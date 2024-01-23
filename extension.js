@@ -29,7 +29,7 @@ const panelConfig = {
 };
 
 function removePair(e) {
-  if (API.settings.get("auto-pair") == false)
+  if (API.settings.get("auto-pair") == false) // Check if switch is toggled off
   {return;}
   
   // Don't modify when text is deleted
@@ -49,7 +49,8 @@ function removePair(e) {
     elementAsArr.splice(pos, 1);
     editedLine = elementAsArr.join('');
     
-    e.target.value = editedLine;
+    e.target.value = editedLine + 'a'; // necessary to prevent a small bug
+    e.target.value = editedLine
     e.target.selectionEnd = pos;
   }
 }
