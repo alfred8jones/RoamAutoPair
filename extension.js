@@ -1,5 +1,20 @@
+const NAMESPACE = "AUTO-PAIR-EXT"; 
 const DEFAULT_TOGGLE = false;
 const pairs = new Array("[", "(", "{");
+
+function writeToStorage(key, value) {
+  const serializedData = localStorage.getItem(NAMESPACE);
+  const data = serializedData ? JSON.parse(serializedData) : {};
+  data[key] = value;
+  localStorage.setItem(NAMESPACE, JSON.stringify(data));
+}
+ 
+function readFromStorage(key) {
+  const serializedData = localStorage.getItem(NAMESPACE);
+  const data = JSON.parse(serializedData);
+  return data ? data[key] : undefined;
+}
+
 
 const panelConfig = {
   tabTitle: "Auto Pair",
@@ -11,14 +26,14 @@ const panelConfig = {
       type: "switch",
       onChange: (evt) => {
         if (evt.target.checked)
-            {localStorage.setItem('autoPairToggled', "true");}
+            {writeToStorage('autoPairToggled', "true");}
         else
-            {localStorage.setItem('autoPairToggled', "false");}
+            {writeToStorage('autoPairToggled', "false");}
       }}}]
 };
 
 function removePair(e) {
-  if (JSON.parse(localStorage.getItem('autoPairToggled')) == false)
+  if (JSON.parse(readFromStorage('autoPairToggled')) == false)
   {return;}
   
   // Don't modify when text is deleted
@@ -52,18 +67,18 @@ function onload({extensionAPI}) {
   extensionAPI.settings.panel.create(panelConfig);
 
   // Check for extension initial load using local storage
-  if (localStorage.getItem('firstLoadDone') == null || localStorage.getItem('firstLoadDone') == "unloaded")
+  if (readFromStorage('firstLoadDone') == null || readFromStorage('firstLoadDone') == "unloaded")
   {
     extensionAPI.settings.set("auto-pair", DEFAULT_TOGGLE); // Toggle button on/off for first load
-    localStorage.setItem('autoPairToggled', DEFAULT_TOGGLE.toString());
-    localStorage.setItem('firstLoadDone', "loaded");
+    writeToStorage('autoPairToggled', DEFAULT_TOGGLE.toString());
+    writeToStoarge('firstLoadDone', "loaded");
   }
   
   console.log("loaded 'disable auto pair' plugin.")
 }
 
 function onunload() {
-  localStorage.setItem('firstLoadDone', "unloaded");
+  writeToStorage('firstLoadDone', "unloaded");
   document.removeEventListener("input", removePair);
   console.log("unloaded 'disable auto pair' plugin.")
 }
