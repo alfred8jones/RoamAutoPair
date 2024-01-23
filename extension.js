@@ -8,7 +8,7 @@ function writeToStorage(key, value) {
   const data = serializedData ? JSON.parse(serializedData) : {};
   data[key] = value;
   
-  alert("data: " + JSON.stringify(data));
+  // alert("data: " + JSON.stringify(data));
   alert("key: " + key);
   alert("value: " + value);
   alert("get: " + API.settings.get("auto-pair"));
