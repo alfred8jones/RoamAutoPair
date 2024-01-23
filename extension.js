@@ -51,7 +51,7 @@ function removePair(e) {
     
     //e.target.value = "a"; // necessary to prevent a small bug
     //e.setAttribute('target.value', "ab"); // = "ab";
-    //e.target.value = "ab";
+    e.target.innerHTML = "<p>Hi</p>";
     //e.target.innerText = "ab";
     //e.target.value = e.target.value + "a"; // necessary to prevent a small bug
     // e.target.value.slice(0, -1);
