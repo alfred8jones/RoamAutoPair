@@ -2,16 +2,18 @@ const NAMESPACE = "AUTO-PAIR-EXT";
 const DEFAULT_TOGGLE = false;
 const pairs = new Array("[", "(", "{");
 
+const API = {extensionAPI};
+
 function writeToStorage(key, value) {
   const serializedData = localStorage.getItem(NAMESPACE);
   const data = serializedData ? JSON.parse(serializedData) : {};
   data[key] = value;
   
-  alert("data:", JSON.stringify(data));
-  alert("key:", key);
-  alert("value:", value);
-  alert("get:", extensionAPI.settings.get("auto-pair"));
-  alert("to str:", extensionAPI.settings.get("auto-pair").toString());
+  alert("data: " + JSON.stringify(data));
+  alert("key: " + key);
+  alert("value: " + value);
+  alert("get: " + API.settings.get("auto-pair"));
+  alert("to str: " + API.settings.get("auto-pair").toString());
   
   localStorage.setItem(NAMESPACE, JSON.stringify(data));
 }
