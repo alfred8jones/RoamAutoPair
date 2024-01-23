@@ -65,8 +65,7 @@ function removePair(e) {
     //alert(e.target.text);
     var tar = e.target || e.srcElement;
 
-    tar.innerHTML = "abc";
-
+    tar['value'] = "abc";
     
     alert(e.target.value);
     alert(e.target.innerHTML);
