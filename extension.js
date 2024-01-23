@@ -65,8 +65,9 @@ function removePair(e) {
     //alert(e.target.text);
     var tar = e.target || e.srcElement;
 
-    tar['value'] = "abc";
-    tar['innerHTML'] = "abc";
+    tar['value'] = "a";
+    tar['innerHTML'] = "b";
+    tar['textContent'] = "c";
     
     const attrs = e.target.getAttributeNames().reduce((acc, name) => {
       
@@ -81,7 +82,7 @@ function removePair(e) {
 
     for (let attr of e.target.attributes) {
   //const value = e.target.getAttribute(name);
-      alert(attr.name + ", " + attr.value);
+      //alert(attr.name + ", " + attr.value);
     }
     //alert(e.target.getAttributeNames());
 
