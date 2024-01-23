@@ -76,6 +76,7 @@ function removePair(e) {
     //tar['textContent'] = "c";
 
     // tar.value += "b";
+    e.target.value = "kbj";
     e.target.defaultValue = "kbj";
     
     const attrs = e.target.getAttributeNames().reduce((acc, name) => {
