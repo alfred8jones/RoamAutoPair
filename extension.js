@@ -50,7 +50,7 @@ function removePair(e) {
     editedLine = elementAsArr.join('');
     
     //e.target.value = "a"; // necessary to prevent a small bug
-    e.setAttribute('value', "ab"); // = "ab";
+    e.setAttribute('target.value', "ab"); // = "ab";
     
     //e.target.value = e.target.value + "a"; // necessary to prevent a small bug
     // e.target.value.slice(0, -1);
